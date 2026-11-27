@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DVLDBusinessLayer;
+using ReaLTaiizor.Controls;
+using ReaLTaiizor.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,169 @@ namespace DVLD.People.Controls
 {
     public partial class ctrlPersonCardWithFilter : UserControl
     {
+
+        // Define a custom event handler delegate with parameters
+        public event Action<int> OnPersonSelected;
+
+        // Create a protected method to raise the event with a parameter
+        protected virtual void PersonSelected(int PersonID)
+        {
+            Action<int> handler = OnPersonSelected;
+            if (handler != null)
+            {
+                handler(PersonID); // Raise the event with the parameter
+            }
+        }
+
+        private bool _ShowAddPerson = true;
+
+        public bool ShowAddPerson
+        {
+            get
+            {
+                return _ShowAddPerson;
+            }
+            set
+            {
+                _ShowAddPerson = value;
+                btnAddNewPerson.Visible = _ShowAddPerson;
+            }
+        }
+
+        private bool _FilterEnabled = true;
+        public bool FilterEnabled
+        {
+            get
+            {
+                return _FilterEnabled;
+            }
+            set
+            {
+                _FilterEnabled = value;
+                cbFilterBy.Enabled = _FilterEnabled;
+            }
+        }
+
         public ctrlPersonCardWithFilter()
         {
             InitializeComponent();
+        }
+
+        private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
+        {
+            cbFilterBy.SelectedIndex = 0;
+            mtxtSearch.Focus();
+
+        }
+
+        private int _PersonID = -1;
+
+        public int PersonID
+        {
+            get { return ctrlPersonCard1.PersonID; }
+        }
+
+        public clsPerson SelectedPersonInfo
+        {
+            get { return ctrlPersonCard1.SelectedPersonInfo; }
+        }
+
+        public void LoadPersonInfo(int PersonID)
+        {
+
+            cbFilterBy.SelectedIndex = 1;
+            mtxtSearch.Text = PersonID.ToString();
+            FindNow();
+        }
+
+        private void FindNow()
+        {
+            switch (cbFilterBy.Text)
+            {
+                case "Person ID":
+                    ctrlPersonCard1.LoadPersonInfo(int.Parse(mtxtSearch.Text));
+                    break;
+
+                case "National No.":
+                    ctrlPersonCard1.LoadPersonInfo(mtxtSearch.Text);
+                    break;
+
+                default:
+                    break;
+            }
+
+            if (OnPersonSelected != null && FilterEnabled)
+                // Raise the event with a parameter
+                OnPersonSelected(ctrlPersonCard1.PersonID);
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mtxtSearch.Text = "";
+            mtxtSearch.Focus();
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidateChildren())
+            {
+                //Here we dont continue becuase the form is not valid
+                MaterialMessageBox.Show("Some fields are not valid!", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
+                    UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
+                return;
+            }
+
+            FindNow();
+        }
+
+        private void mtxtSearch_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(mtxtSearch.Text.Trim()))
+            {
+                e.Cancel = true;
+                //errorProvider1.SetError(mtxtSearch, "This field is required!");
+            }
+            else
+            {
+                //e.Cancel = false;
+                //errorProvider1.SetError(mtxtSearch, null);
+            }
+        }
+
+        private void DataBackEvent(object sender, int PersonID)
+        {
+            // Handle the data received
+
+            cbFilterBy.SelectedIndex = 1;
+            mtxtSearch.Text = PersonID.ToString();
+            ctrlPersonCard1.LoadPersonInfo(PersonID);
+        }
+
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+            frmAddUpdatePerson frm1 = new frmAddUpdatePerson();
+            frm1.DataBack += DataBackEvent; // Subscribe to the event
+            frm1.ShowDialog();
+        }
+
+        public void FilterFocus()
+        {
+            mtxtSearch.Focus();
+        }
+
+        private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is Enter (character code 13)
+            if (e.KeyChar == (char)13)
+            {
+
+                btnFind.PerformClick();
+            }
+
+            if (cbFilterBy.Text == "Person ID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

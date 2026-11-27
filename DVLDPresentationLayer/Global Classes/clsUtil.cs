@@ -1,4 +1,9 @@
 ﻿using DVLDBusinessLayer;
+using ReaLTaiizor.Forms;
+using ReaLTaiizor.Colors;
+using ReaLTaiizor.Controls;
+using ReaLTaiizor.Extension;
+using ReaLTaiizor.Manager;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,7 +36,10 @@ namespace DVLD.Global_Classes
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error creating folder: " + ex.Message);
+                    MaterialMessageBox.Show($"Error creating folder: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
+                        UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
+
                     return false;
                 }
             }
@@ -63,7 +71,9 @@ namespace DVLD.Global_Classes
             }
             catch (IOException iox)
             {
-                MessageBox.Show(iox.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MaterialMessageBox.Show($"{iox.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
+                        UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
                 return false;
             }
 

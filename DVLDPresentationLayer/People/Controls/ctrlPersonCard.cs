@@ -1,6 +1,11 @@
 ﻿using DVLD.People;
 using DVLD.Properties;
 using DVLDBusinessLayer;
+using ReaLTaiizor.Forms;
+using ReaLTaiizor.Colors;
+using ReaLTaiizor.Controls;
+using ReaLTaiizor.Extension;
+using ReaLTaiizor.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +47,9 @@ namespace DVLD.Controls
             if (_Person == null)
             {
                 ResetPersonInfo();
-                MessageBox.Show("No Person with PersonID = " + PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MaterialMessageBox.Show($"No Person with PersonID = {PersonID.ToString()}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
+                        UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
                 return;
             }
 
@@ -55,7 +62,9 @@ namespace DVLD.Controls
             if (_Person == null)
             {
                 ResetPersonInfo();
-                MessageBox.Show("No Person with PersonID = " + PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MaterialMessageBox.Show($"No Person with PersonID = {PersonID.ToString()}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
+                        UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
                 return;
             }
 
@@ -64,15 +73,17 @@ namespace DVLD.Controls
 
         private void _LoadPersonImage()
         {
-            pbPersonPicture.Image = Resources.testPerson1;
 
             string ImagePath = _Person.ImagePath;
             if (ImagePath != "")
                 if (File.Exists(ImagePath))
                     pbPersonPicture.ImageLocation = ImagePath;
                 else
-                    MessageBox.Show("Could not find this image: = " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    MaterialMessageBox.Show($"Could not find this image: = {ImagePath}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
+                        UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
+            else
+                pbPersonPicture.Image = Resources.testPerson1;
         }
 
         private void _FillPersonInfo()

@@ -201,17 +201,22 @@ namespace DVLD.People
         {
             int PersonID = Convert.ToInt32(dgvAllPeople.CurrentRow.Cells["PersonID"].Value);
 
-            if (MessageBox.Show($"Are you sure you want delete this person with ID {PersonID} ?",
-                "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MaterialMessageBox.Show($"Are you sure you want delete this person with ID {PersonID} ?", "Confirm Delete",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2,
+                UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center) == DialogResult.Yes)
             {
                 if (clsPerson.DeletePerson(PersonID))
                 {
-                    MessageBox.Show("Person Deleted Successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MaterialMessageBox.Show("Person Deleted Successfully.", "Successful Delete",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1,
+                        UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
                     _RefreshPeopleList();
                 }
 
                 else
-                    MessageBox.Show("Person was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MaterialMessageBox.Show("Person was not deleted because it has data linked to it.", "Deletion failed",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
+                        UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
             }
         }
 

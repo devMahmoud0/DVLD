@@ -39,7 +39,6 @@ namespace DVLD.People
         private enMode _Mode;
         private int _PersonID = -1;
         private clsPerson _Person;
-        private clsPerson _CurrentPerson;
 
         public frmAddUpdatePerson()
         {
@@ -102,7 +101,9 @@ namespace DVLD.People
 
             if (_Person == null)
             {
-                MessageBox.Show("No Person with ID = " + _PersonID, "Person Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MaterialMessageBox.Show($"No Person with ID = {_PersonID}", "Person Not Found",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1,
+                UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
                 this.Close();
                 return;
             }
@@ -167,7 +168,9 @@ namespace DVLD.People
                     }
                     else
                     {
-                        MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MaterialMessageBox.Show("Error Copying Image File", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
+                            UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
                         return false;
                     }
                 }
@@ -381,15 +384,12 @@ namespace DVLD.People
             if (!ValidateFields())
             {
                 //Here we dont continue becuase the form is not valid
-                MessageBox.Show("Some fileds are not valide!, put the mouse over the red icon(s) to see the erro", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MaterialMessageBox.Show("Some fields are not valid!", "Validation Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
+                            UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
                 return;
 
             }
-            /*else
-            {
-                MessageBox.Show("Done Save", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }*/
 
             if (!_HandlePersonImage())
                 return;
@@ -402,13 +402,17 @@ namespace DVLD.People
                 _Mode = enMode.Update;
                 lblTitle.Text = "Update Person";
 
-                MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MaterialMessageBox.Show("Data Saved Successfully.", "Data Saved",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1,
+                            UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
 
                 // Trigger the event to send data back to the caller form.
                 DataBack?.Invoke(this, _Person.PersonID);
             }
             else
-                MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MaterialMessageBox.Show("Error: Data Is Not Saved Successfully.", "Save Failed",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
+                            UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
 
         }
 

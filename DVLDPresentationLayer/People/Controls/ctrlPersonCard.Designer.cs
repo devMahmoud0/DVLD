@@ -108,7 +108,6 @@
             // pbPersonPicture
             // 
             this.pbPersonPicture.BackColor = System.Drawing.Color.White;
-            this.pbPersonPicture.Image = global::DVLD.Properties.Resources.testPerson1;
             this.pbPersonPicture.Location = new System.Drawing.Point(656, 64);
             this.pbPersonPicture.Name = "pbPersonPicture";
             this.pbPersonPicture.Size = new System.Drawing.Size(176, 176);
