@@ -266,7 +266,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.panel1.BackgroundImage = global::DVLD.Properties.Resources.Gemini_Generated_Image_csv157csv157csv1;
+            this.panel1.BackgroundImage = global::DVLD.Properties.Resources.background;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -305,7 +305,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.Logo__1_;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.Logo;
             this.pictureBox1.Location = new System.Drawing.Point(141, 136);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 120);

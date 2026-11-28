@@ -179,20 +179,6 @@ namespace DVLD.People
             return true;
         }
 
-        private void ShowError(MaterialTextBoxEdit box, bool hasError, string message = "")
-        {
-            box.SetErrorState(hasError);
-            box.ShowAssistiveText = hasError;
-            box.ErrorMessage = hasError ? message : "";
-        }
-
-        private void ShowError(MaterialMaskedTextBox box, bool hasError, string message = "")
-        {
-            box.SetErrorState(hasError);
-            box.ShowAssistiveText = hasError;
-            box.ErrorMessage = hasError ? message : "";
-        }
-
         private void llblSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             openFileDialog1.Title = "Choose your photo";
@@ -214,28 +200,28 @@ namespace DVLD.People
         {
 
             if (string.IsNullOrWhiteSpace(txtFirstName.Text))
-                ShowError(txtFirstName, true, "This field is required!");
+                clsUtil.ShowError(txtFirstName, true, "This field is required!");
 
             if (string.IsNullOrWhiteSpace(txtSecondName.Text))
-                ShowError(txtSecondName, true, "This field is required!");
+                clsUtil.ShowError(txtSecondName, true, "This field is required!");
 
             if (string.IsNullOrWhiteSpace(txtThirdName.Text))
-                ShowError(txtThirdName, true, "This field is required!");
+                clsUtil.ShowError(txtThirdName, true, "This field is required!");
 
             if (string.IsNullOrWhiteSpace(txtLastName.Text))
-                ShowError(txtLastName, true, "This field is required!");
+                clsUtil.ShowError(txtLastName, true, "This field is required!");
 
             if (string.IsNullOrWhiteSpace(txtNationalNo.Text))
-                ShowError(txtNationalNo, true, "This field is required!");
+                clsUtil.ShowError(txtNationalNo, true, "This field is required!");
 
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
-                ShowError(txtEmail, true, "This field is required!");
+                clsUtil.ShowError(txtEmail, true, "This field is required!");
 
             if (string.IsNullOrWhiteSpace(txtAddress.Text))
-                ShowError(txtAddress, true, "This field is required!");
+                clsUtil.ShowError(txtAddress, true, "This field is required!");
 
             if (string.IsNullOrWhiteSpace(txtPhone.Text))
-                ShowError(txtPhone, true, "This field is required!");
+                clsUtil.ShowError(txtPhone, true, "This field is required!");
 
             /*
              
@@ -263,15 +249,15 @@ namespace DVLD.People
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
-            if (txtEmail.Text.Trim() == "") { ShowError(txtEmail, false, ""); return; }
+            if (txtEmail.Text.Trim() == "") { clsUtil.ShowError(txtEmail, false, ""); return; }
 
             if (!clsValidation.ValidateEmail(txtEmail.Text))
             {
-                ShowError(txtEmail, true, "Invalid Email Address Format!");
+                clsUtil.ShowError(txtEmail, true, "Invalid Email Address Format!");
             }
             else
             {
-                ShowError(txtEmail, false, "");
+                clsUtil.ShowError(txtEmail, false, "");
             }
 
         }
@@ -279,25 +265,25 @@ namespace DVLD.People
         private void txtNationalNo_Validating(object sender, CancelEventArgs e)
         {
 
-            if (txtNationalNo.Text.Trim() == "") { ShowError(txtNationalNo, false, ""); return; }
+            if (txtNationalNo.Text.Trim() == "") { clsUtil.ShowError(txtNationalNo, false, ""); return; }
 
             /*if (string.IsNullOrEmpty(txtNationalNo.Text.Trim()))
             {
-                ShowError(txtNationalNo, true, "This field is required!");
+                clsUtil.ShowError(txtNationalNo, true, "This field is required!");
                 return;
             }
             else
             {
-                ShowError(txtNationalNo, false, "");
+                clsUtil.ShowError(txtNationalNo, false, "");
             }*/
 
             if (txtNationalNo.Text.Trim() != _Person.NationalNo && clsPerson.IsPersonExists(txtNationalNo.Text.Trim()))
             {
-                ShowError(txtNationalNo, true, "National Number is used!");
+                clsUtil.ShowError(txtNationalNo, true, "National Number is used!");
             }
             else
             {
-                ShowError(txtNationalNo, false, "");
+                clsUtil.ShowError(txtNationalNo, false, "");
             }
         }
 
@@ -312,12 +298,12 @@ namespace DVLD.People
             if (control is MaterialMaskedTextBox masked)
             {
                 if (masked.Text.Trim() == "" || masked.GetErrorState())
-                    ShowError(masked, false, "");
+                    clsUtil.ShowError(masked, false, "");
             }
             else if (control is MaterialTextBoxEdit edit)
             {
                 if (edit.Text.Trim() == "" || edit.GetErrorState())
-                    ShowError(edit, false, "");
+                    clsUtil.ShowError(edit, false, "");
             }
         }
 
@@ -343,11 +329,11 @@ namespace DVLD.People
 
             if (!validInput)
             {
-                ShowError(txtPhone, true, "Invalid phone number!");
+                clsUtil.ShowError(txtPhone, true, "Invalid phone number!");
             }
             else
             {
-                ShowError(txtPhone, false, "");
+                clsUtil.ShowError(txtPhone, false, "");
             }
         }
 

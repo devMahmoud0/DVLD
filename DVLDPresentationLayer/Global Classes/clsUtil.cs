@@ -80,5 +80,19 @@ namespace DVLD.Global_Classes
             sourceFile = destinationFile;
             return true;
         }
+
+        public static void ShowError(MaterialTextBoxEdit box, bool hasError, string message = "")
+        {
+            box.SetErrorState(hasError);
+            box.ShowAssistiveText = hasError;
+            box.ErrorMessage = hasError ? message : "";
+        }
+
+        public static void ShowError(MaterialMaskedTextBox box, bool hasError, string message = "")
+        {
+            box.SetErrorState(hasError);
+            box.ShowAssistiveText = hasError;
+            box.ErrorMessage = hasError ? message : "";
+        }
     }
 }

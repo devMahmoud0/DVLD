@@ -482,3 +482,6 @@ $RECYCLE.BIN/
 *.swp
 
 packages/
+/DVLDPresentationLayer/frmTest.cs
+/DVLDPresentationLayer/frmTest.Designer.cs
+/DVLDPresentationLayer/frmTest.resx

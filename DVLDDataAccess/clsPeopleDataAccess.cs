@@ -99,7 +99,7 @@ namespace DVLDDataAccess
                     SecondName = (string)reader["SecondName"];
                     ThirdName = (string)reader["ThirdName"];
                     LastName = (string)reader["LastName"];
-                    Gender = (sbyte)reader["Gender"];
+                    Gender = Convert.ToSByte(reader["Gender"]);
                     Email = (string)reader["Email"];
                     Phone = (string)reader["Phone"];
                     DateOfBirth = (DateTime)reader["DateOfBirth"];

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.thunderGroupBox1 = new ReaLTaiizor.Controls.ThunderGroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnAddNewPerson = new ReaLTaiizor.Controls.MaterialButton();
+            this.btnFind = new ReaLTaiizor.Controls.MaterialButton();
             this.mtxtSearch = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             this.cbFilterBy = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.btnFind = new ReaLTaiizor.Controls.MaterialButton();
-            this.btnAddNewPerson = new ReaLTaiizor.Controls.MaterialButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.ctrlPersonCard1 = new DVLD.Controls.ctrlPersonCard();
             this.thunderGroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -58,17 +58,53 @@
             this.thunderGroupBox1.TabIndex = 3;
             this.thunderGroupBox1.Text = "Filter";
             // 
-            // label1
+            // btnAddNewPerson
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(16, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Find By:";
+            this.btnAddNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewPerson.AutoSize = false;
+            this.btnAddNewPerson.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddNewPerson.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNewPerson.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAddNewPerson.Depth = 0;
+            this.btnAddNewPerson.HighEmphasis = true;
+            this.btnAddNewPerson.Icon = global::DVLD.Properties.Resources.add_person;
+            this.btnAddNewPerson.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.btnAddNewPerson.Location = new System.Drawing.Point(632, 45);
+            this.btnAddNewPerson.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAddNewPerson.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.btnAddNewPerson.Name = "btnAddNewPerson";
+            this.btnAddNewPerson.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAddNewPerson.Size = new System.Drawing.Size(180, 36);
+            this.btnAddNewPerson.TabIndex = 14;
+            this.btnAddNewPerson.Text = "Add New Person";
+            this.btnAddNewPerson.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAddNewPerson.UseAccentColor = false;
+            this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
+            // 
+            // btnFind
+            // 
+            this.btnFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFind.AutoSize = false;
+            this.btnFind.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFind.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnFind.Depth = 0;
+            this.btnFind.HighEmphasis = true;
+            this.btnFind.Icon = global::DVLD.Properties.Resources.find;
+            this.btnFind.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.btnFind.Location = new System.Drawing.Point(520, 44);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnFind.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.btnFind.Name = "btnFind";
+            this.btnFind.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnFind.Size = new System.Drawing.Size(96, 36);
+            this.btnFind.TabIndex = 12;
+            this.btnFind.Text = "Find";
+            this.btnFind.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnFind.UseAccentColor = false;
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // mtxtSearch
             // 
@@ -113,7 +149,6 @@
             this.mtxtSearch.UseSystemPasswordChar = false;
             this.mtxtSearch.UseTallSize = false;
             this.mtxtSearch.ValidatingType = null;
-            this.mtxtSearch.Visible = false;
             // 
             // cbFilterBy
             // 
@@ -142,59 +177,23 @@
             this.cbFilterBy.UseTallSize = false;
             this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
-            // btnFind
+            // label1
             // 
-            this.btnFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFind.AutoSize = false;
-            this.btnFind.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFind.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnFind.Depth = 0;
-            this.btnFind.HighEmphasis = true;
-            this.btnFind.Icon = global::DVLD.Properties.Resources.find;
-            this.btnFind.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnFind.Location = new System.Drawing.Point(520, 44);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnFind.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.btnFind.Name = "btnFind";
-            this.btnFind.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnFind.Size = new System.Drawing.Size(96, 36);
-            this.btnFind.TabIndex = 12;
-            this.btnFind.Text = "Find";
-            this.btnFind.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnFind.UseAccentColor = false;
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
-            // btnAddNewPerson
-            // 
-            this.btnAddNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewPerson.AutoSize = false;
-            this.btnAddNewPerson.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAddNewPerson.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNewPerson.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnAddNewPerson.Depth = 0;
-            this.btnAddNewPerson.HighEmphasis = true;
-            this.btnAddNewPerson.Icon = global::DVLD.Properties.Resources.user_add;
-            this.btnAddNewPerson.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnAddNewPerson.Location = new System.Drawing.Point(632, 45);
-            this.btnAddNewPerson.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnAddNewPerson.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnAddNewPerson.Size = new System.Drawing.Size(180, 36);
-            this.btnAddNewPerson.TabIndex = 14;
-            this.btnAddNewPerson.Text = "Add New Person";
-            this.btnAddNewPerson.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnAddNewPerson.UseAccentColor = false;
-            this.btnAddNewPerson.UseVisualStyleBackColor = true;
-            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(16, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Find By:";
             // 
             // ctrlPersonCard1
             // 
             this.ctrlPersonCard1.Location = new System.Drawing.Point(0, 120);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
-            this.ctrlPersonCard1.Size = new System.Drawing.Size(847, 252);
+            this.ctrlPersonCard1.Size = new System.Drawing.Size(847, 256);
             this.ctrlPersonCard1.TabIndex = 0;
             // 
             // ctrlPersonCardWithFilter
@@ -204,7 +203,7 @@
             this.Controls.Add(this.thunderGroupBox1);
             this.Controls.Add(this.ctrlPersonCard1);
             this.Name = "ctrlPersonCardWithFilter";
-            this.Size = new System.Drawing.Size(847, 373);
+            this.Size = new System.Drawing.Size(847, 376);
             this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
             this.thunderGroupBox1.ResumeLayout(false);
             this.thunderGroupBox1.PerformLayout();

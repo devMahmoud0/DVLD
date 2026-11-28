@@ -118,11 +118,11 @@
             // 
             this.ApplicationsTab.BackColor = System.Drawing.SystemColors.Control;
             this.ApplicationsTab.Controls.Add(this.menuStrip1);
-            this.ApplicationsTab.ImageKey = "document.png";
-            this.ApplicationsTab.Location = new System.Drawing.Point(4, 31);
+            this.ApplicationsTab.ImageKey = "Applications.png";
+            this.ApplicationsTab.Location = new System.Drawing.Point(4, 39);
             this.ApplicationsTab.Name = "ApplicationsTab";
             this.ApplicationsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ApplicationsTab.Size = new System.Drawing.Size(1435, 763);
+            this.ApplicationsTab.Size = new System.Drawing.Size(1435, 755);
             this.ApplicationsTab.TabIndex = 0;
             this.ApplicationsTab.Text = "Applications";
             // 
@@ -274,41 +274,41 @@
             // PeopleTab
             // 
             this.PeopleTab.BackColor = System.Drawing.SystemColors.Control;
-            this.PeopleTab.ImageKey = "person_man (1).png";
-            this.PeopleTab.Location = new System.Drawing.Point(4, 31);
+            this.PeopleTab.ImageKey = "People.png";
+            this.PeopleTab.Location = new System.Drawing.Point(4, 39);
             this.PeopleTab.Name = "PeopleTab";
             this.PeopleTab.Padding = new System.Windows.Forms.Padding(3);
-            this.PeopleTab.Size = new System.Drawing.Size(1435, 763);
+            this.PeopleTab.Size = new System.Drawing.Size(1435, 755);
             this.PeopleTab.TabIndex = 1;
             this.PeopleTab.Text = "People";
             // 
             // DriversTab
             // 
             this.DriversTab.BackColor = System.Drawing.SystemColors.Control;
-            this.DriversTab.ImageKey = "driver.png";
-            this.DriversTab.Location = new System.Drawing.Point(4, 31);
+            this.DriversTab.ImageKey = "Drivers.png";
+            this.DriversTab.Location = new System.Drawing.Point(4, 39);
             this.DriversTab.Name = "DriversTab";
-            this.DriversTab.Size = new System.Drawing.Size(1435, 763);
+            this.DriversTab.Size = new System.Drawing.Size(1435, 755);
             this.DriversTab.TabIndex = 2;
             this.DriversTab.Text = "Drivers";
             // 
             // UsersTab
             // 
             this.UsersTab.BackColor = System.Drawing.SystemColors.Control;
-            this.UsersTab.ImageKey = "user (4).png";
-            this.UsersTab.Location = new System.Drawing.Point(4, 31);
+            this.UsersTab.ImageKey = "Users.png";
+            this.UsersTab.Location = new System.Drawing.Point(4, 39);
             this.UsersTab.Name = "UsersTab";
-            this.UsersTab.Size = new System.Drawing.Size(1435, 763);
+            this.UsersTab.Size = new System.Drawing.Size(1435, 755);
             this.UsersTab.TabIndex = 3;
             this.UsersTab.Text = "Users";
             // 
             // AccountSettingsTab
             // 
             this.AccountSettingsTab.BackColor = System.Drawing.SystemColors.Control;
-            this.AccountSettingsTab.ImageKey = "settings.png";
-            this.AccountSettingsTab.Location = new System.Drawing.Point(4, 31);
+            this.AccountSettingsTab.ImageKey = "AccountSettings.png";
+            this.AccountSettingsTab.Location = new System.Drawing.Point(4, 39);
             this.AccountSettingsTab.Name = "AccountSettingsTab";
-            this.AccountSettingsTab.Size = new System.Drawing.Size(1435, 763);
+            this.AccountSettingsTab.Size = new System.Drawing.Size(1435, 755);
             this.AccountSettingsTab.TabIndex = 4;
             this.AccountSettingsTab.Text = "Account Settings";
             // 
@@ -316,14 +316,11 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "document.png");
-            this.imageList1.Images.SetKeyName(1, "Logo (1).png");
-            this.imageList1.Images.SetKeyName(2, "person_man.png");
-            this.imageList1.Images.SetKeyName(3, "person_man (1).png");
-            this.imageList1.Images.SetKeyName(4, "settings.png");
-            this.imageList1.Images.SetKeyName(5, "driver.png");
-            this.imageList1.Images.SetKeyName(6, "user (3).png");
-            this.imageList1.Images.SetKeyName(7, "user (4).png");
+            this.imageList1.Images.SetKeyName(0, "Applications.png");
+            this.imageList1.Images.SetKeyName(1, "People.png");
+            this.imageList1.Images.SetKeyName(2, "Drivers.png");
+            this.imageList1.Images.SetKeyName(3, "AccountSettings.png");
+            this.imageList1.Images.SetKeyName(4, "Users.png");
             // 
             // metroControlBox1
             // 
@@ -396,7 +393,7 @@
             this.pbCurrentUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbCurrentUser.BackColor = System.Drawing.Color.Transparent;
             this.pbCurrentUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCurrentUser.Image = global::DVLD.Properties.Resources.user__5_;
+            this.pbCurrentUser.Image = global::DVLD.Properties.Resources.currentUser;
             this.pbCurrentUser.Location = new System.Drawing.Point(1363, 7);
             this.pbCurrentUser.Name = "pbCurrentUser";
             this.pbCurrentUser.Size = new System.Drawing.Size(24, 24);

@@ -35,28 +35,28 @@
             ReaLTaiizor.MSColorTable msColorTable1 = new ReaLTaiizor.MSColorTable();
             this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnEdit = new ReaLTaiizor.Controls.MaterialButton();
+            this.btnShowDetails = new ReaLTaiizor.Controls.MaterialButton();
+            this.btnAddNewPerson = new ReaLTaiizor.Controls.MaterialButton();
             this.label1 = new System.Windows.Forms.Label();
             this.mtxtSearch = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             this.cbFilterBy = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.btnDelete = new ReaLTaiizor.Controls.MaterialButton();
             this.dgvAllPeople = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.formContextMenuStrip1 = new ReaLTaiizor.Controls.FormContextMenuStrip();
+            this.tsmiShowDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiAddNewPerson = new System.Windows.Forms.ToolStripMenuItem();
+            this.tttadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phoneCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblNumberOfRecords = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bigLabel2 = new ReaLTaiizor.Controls.BigLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnEdit = new ReaLTaiizor.Controls.MaterialButton();
-            this.btnShowDetails = new ReaLTaiizor.Controls.MaterialButton();
-            this.btnAddNewPerson = new ReaLTaiizor.Controls.MaterialButton();
-            this.btnDelete = new ReaLTaiizor.Controls.MaterialButton();
-            this.tsmiShowDetails = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAddNewPerson = new System.Windows.Forms.ToolStripMenuItem();
-            this.tttadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.phoneCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).BeginInit();
             this.formContextMenuStrip1.SuspendLayout();
@@ -110,6 +110,78 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1352, 54);
             this.tableLayoutPanel3.TabIndex = 11;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.AutoSize = false;
+            this.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEdit.Depth = 0;
+            this.btnEdit.HighEmphasis = true;
+            this.btnEdit.Icon = global::DVLD.Properties.Resources.edit;
+            this.btnEdit.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.btnEdit.Location = new System.Drawing.Point(1152, 6);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEdit.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEdit.Size = new System.Drawing.Size(88, 36);
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEdit.UseAccentColor = false;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnShowDetails
+            // 
+            this.btnShowDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowDetails.AutoSize = false;
+            this.btnShowDetails.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnShowDetails.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowDetails.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnShowDetails.Depth = 0;
+            this.btnShowDetails.HighEmphasis = true;
+            this.btnShowDetails.Icon = global::DVLD.Properties.Resources.ShowDetails;
+            this.btnShowDetails.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.btnShowDetails.Location = new System.Drawing.Point(988, 6);
+            this.btnShowDetails.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnShowDetails.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.btnShowDetails.Name = "btnShowDetails";
+            this.btnShowDetails.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnShowDetails.Size = new System.Drawing.Size(156, 36);
+            this.btnShowDetails.TabIndex = 9;
+            this.btnShowDetails.Text = "Show Details";
+            this.btnShowDetails.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnShowDetails.UseAccentColor = false;
+            this.btnShowDetails.UseVisualStyleBackColor = true;
+            this.btnShowDetails.Click += new System.EventHandler(this.btnShowDetails_Click);
+            // 
+            // btnAddNewPerson
+            // 
+            this.btnAddNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewPerson.AutoSize = false;
+            this.btnAddNewPerson.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddNewPerson.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNewPerson.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAddNewPerson.Depth = 0;
+            this.btnAddNewPerson.HighEmphasis = true;
+            this.btnAddNewPerson.Icon = global::DVLD.Properties.Resources.add_person;
+            this.btnAddNewPerson.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.btnAddNewPerson.Location = new System.Drawing.Point(799, 6);
+            this.btnAddNewPerson.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAddNewPerson.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.btnAddNewPerson.Name = "btnAddNewPerson";
+            this.btnAddNewPerson.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAddNewPerson.Size = new System.Drawing.Size(180, 36);
+            this.btnAddNewPerson.TabIndex = 10;
+            this.btnAddNewPerson.Text = "Add New Person";
+            this.btnAddNewPerson.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAddNewPerson.UseAccentColor = false;
+            this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // label1
             // 
@@ -205,6 +277,30 @@
             this.cbFilterBy.UseTallSize = false;
             this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.AutoSize = false;
+            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnDelete.Depth = 0;
+            this.btnDelete.HighEmphasis = true;
+            this.btnDelete.Icon = global::DVLD.Properties.Resources.trash;
+            this.btnDelete.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.btnDelete.Location = new System.Drawing.Point(1248, 6);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDelete.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnDelete.Size = new System.Drawing.Size(100, 36);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnDelete.UseAccentColor = false;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // dgvAllPeople
             // 
             this.dgvAllPeople.AllowUserToAddRows = false;
@@ -274,15 +370,68 @@
             this.formContextMenuStrip1.Renderer = controlRenderer1;
             this.formContextMenuStrip1.Size = new System.Drawing.Size(188, 160);
             // 
+            // tsmiShowDetails
+            // 
+            this.tsmiShowDetails.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.tsmiShowDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.tsmiShowDetails.Image = global::DVLD.Properties.Resources.ShowDetails;
+            this.tsmiShowDetails.Name = "tsmiShowDetails";
+            this.tsmiShowDetails.Size = new System.Drawing.Size(187, 24);
+            this.tsmiShowDetails.Text = "Show Details";
+            this.tsmiShowDetails.Click += new System.EventHandler(this.tsmiShowDetails_Click);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(184, 6);
             // 
+            // tsmiAddNewPerson
+            // 
+            this.tsmiAddNewPerson.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.tsmiAddNewPerson.Image = global::DVLD.Properties.Resources.add_person;
+            this.tsmiAddNewPerson.Name = "tsmiAddNewPerson";
+            this.tsmiAddNewPerson.Size = new System.Drawing.Size(187, 24);
+            this.tsmiAddNewPerson.Text = "Add New Person";
+            this.tsmiAddNewPerson.Click += new System.EventHandler(this.tsmiAddNewPerson_Click);
+            // 
+            // tttadToolStripMenuItem
+            // 
+            this.tttadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.tttadToolStripMenuItem.Image = global::DVLD.Properties.Resources.edit;
+            this.tttadToolStripMenuItem.Name = "tttadToolStripMenuItem";
+            this.tttadToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.tttadToolStripMenuItem.Text = "Edit";
+            this.tttadToolStripMenuItem.Click += new System.EventHandler(this.tttadToolStripMenuItem_Click);
+            // 
+            // tsmiDelete
+            // 
+            this.tsmiDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.tsmiDelete.Image = global::DVLD.Properties.Resources.trash;
+            this.tsmiDelete.Name = "tsmiDelete";
+            this.tsmiDelete.Size = new System.Drawing.Size(187, 24);
+            this.tsmiDelete.Text = "Delete";
+            this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(184, 6);
+            // 
+            // sendEmailToolStripMenuItem
+            // 
+            this.sendEmailToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.sendEmailToolStripMenuItem.Image = global::DVLD.Properties.Resources.email;
+            this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.sendEmailToolStripMenuItem.Text = "Send Email";
+            // 
+            // phoneCallToolStripMenuItem
+            // 
+            this.phoneCallToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.phoneCallToolStripMenuItem.Image = global::DVLD.Properties.Resources.phone_call;
+            this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
             // tableLayoutPanel4
             // 
@@ -361,155 +510,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1352, 48);
             this.tableLayoutPanel1.TabIndex = 13;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.AutoSize = false;
-            this.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnEdit.Depth = 0;
-            this.btnEdit.HighEmphasis = true;
-            this.btnEdit.Icon = global::DVLD.Properties.Resources.edit;
-            this.btnEdit.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnEdit.Location = new System.Drawing.Point(1152, 6);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnEdit.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnEdit.Size = new System.Drawing.Size(88, 36);
-            this.btnEdit.TabIndex = 8;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnEdit.UseAccentColor = false;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnShowDetails
-            // 
-            this.btnShowDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowDetails.AutoSize = false;
-            this.btnShowDetails.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnShowDetails.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShowDetails.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnShowDetails.Depth = 0;
-            this.btnShowDetails.HighEmphasis = true;
-            this.btnShowDetails.Icon = global::DVLD.Properties.Resources.ShowDetails;
-            this.btnShowDetails.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnShowDetails.Location = new System.Drawing.Point(988, 6);
-            this.btnShowDetails.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnShowDetails.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.btnShowDetails.Name = "btnShowDetails";
-            this.btnShowDetails.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnShowDetails.Size = new System.Drawing.Size(156, 36);
-            this.btnShowDetails.TabIndex = 9;
-            this.btnShowDetails.Text = "Show Details";
-            this.btnShowDetails.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnShowDetails.UseAccentColor = false;
-            this.btnShowDetails.UseVisualStyleBackColor = true;
-            this.btnShowDetails.Click += new System.EventHandler(this.btnShowDetails_Click);
-            // 
-            // btnAddNewPerson
-            // 
-            this.btnAddNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewPerson.AutoSize = false;
-            this.btnAddNewPerson.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAddNewPerson.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNewPerson.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnAddNewPerson.Depth = 0;
-            this.btnAddNewPerson.HighEmphasis = true;
-            this.btnAddNewPerson.Icon = global::DVLD.Properties.Resources.user_add;
-            this.btnAddNewPerson.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnAddNewPerson.Location = new System.Drawing.Point(799, 6);
-            this.btnAddNewPerson.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnAddNewPerson.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnAddNewPerson.Size = new System.Drawing.Size(180, 36);
-            this.btnAddNewPerson.TabIndex = 10;
-            this.btnAddNewPerson.Text = "Add New Person";
-            this.btnAddNewPerson.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnAddNewPerson.UseAccentColor = false;
-            this.btnAddNewPerson.UseVisualStyleBackColor = true;
-            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.AutoSize = false;
-            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnDelete.Depth = 0;
-            this.btnDelete.HighEmphasis = true;
-            this.btnDelete.Icon = global::DVLD.Properties.Resources.trash;
-            this.btnDelete.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnDelete.Location = new System.Drawing.Point(1248, 6);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnDelete.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnDelete.Size = new System.Drawing.Size(100, 36);
-            this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnDelete.UseAccentColor = false;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // tsmiShowDetails
-            // 
-            this.tsmiShowDetails.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.tsmiShowDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.tsmiShowDetails.Image = global::DVLD.Properties.Resources.ShowDetails;
-            this.tsmiShowDetails.Name = "tsmiShowDetails";
-            this.tsmiShowDetails.Size = new System.Drawing.Size(187, 24);
-            this.tsmiShowDetails.Text = "Show Details";
-            this.tsmiShowDetails.Click += new System.EventHandler(this.tsmiShowDetails_Click);
-            // 
-            // tsmiAddNewPerson
-            // 
-            this.tsmiAddNewPerson.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.tsmiAddNewPerson.Image = global::DVLD.Properties.Resources.user_add;
-            this.tsmiAddNewPerson.Name = "tsmiAddNewPerson";
-            this.tsmiAddNewPerson.Size = new System.Drawing.Size(187, 24);
-            this.tsmiAddNewPerson.Text = "Add New Person";
-            this.tsmiAddNewPerson.Click += new System.EventHandler(this.tsmiAddNewPerson_Click);
-            // 
-            // tttadToolStripMenuItem
-            // 
-            this.tttadToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.tttadToolStripMenuItem.Image = global::DVLD.Properties.Resources.edit;
-            this.tttadToolStripMenuItem.Name = "tttadToolStripMenuItem";
-            this.tttadToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
-            this.tttadToolStripMenuItem.Text = "Edit";
-            this.tttadToolStripMenuItem.Click += new System.EventHandler(this.tttadToolStripMenuItem_Click);
-            // 
-            // tsmiDelete
-            // 
-            this.tsmiDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.tsmiDelete.Image = global::DVLD.Properties.Resources.trash;
-            this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(187, 24);
-            this.tsmiDelete.Text = "Delete";
-            this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
-            // 
-            // sendEmailToolStripMenuItem
-            // 
-            this.sendEmailToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.sendEmailToolStripMenuItem.Image = global::DVLD.Properties.Resources.payroll;
-            this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
-            this.sendEmailToolStripMenuItem.Text = "Send Email";
-            // 
-            // phoneCallToolStripMenuItem
-            // 
-            this.phoneCallToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.phoneCallToolStripMenuItem.Image = global::DVLD.Properties.Resources.phone_call;
-            this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
-            this.phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
             // frmListPeople
             // 

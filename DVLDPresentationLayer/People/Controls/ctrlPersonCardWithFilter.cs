@@ -1,4 +1,5 @@
-﻿using DVLDBusinessLayer;
+﻿using DVLD.Global_Classes;
+using DVLDBusinessLayer;
 using ReaLTaiizor.Controls;
 using ReaLTaiizor.Forms;
 using System;
@@ -30,7 +31,6 @@ namespace DVLD.People.Controls
         }
 
         private bool _ShowAddPerson = true;
-
         public bool ShowAddPerson
         {
             get
@@ -117,39 +117,32 @@ namespace DVLD.People.Controls
             mtxtSearch.Focus();
         }
 
+        private bool IsEmptyTextBox()
+        {
+            if (string.IsNullOrEmpty(mtxtSearch.Text.Trim()))
+            {
+                clsUtil.ShowError(mtxtSearch, true, "This field is required!");
+                return true;
+            }
+            else
+            {
+                clsUtil.ShowError(mtxtSearch, false, "");
+                return false;
+            }
+        }
+
         private void btnFind_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren())
-            {
-                //Here we dont continue becuase the form is not valid
-                MaterialMessageBox.Show("Some fields are not valid!", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
-                    UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
+            if (IsEmptyTextBox())
                 return;
-            }
 
             FindNow();
         }
 
-        private void mtxtSearch_Validating(object sender, CancelEventArgs e)
-        {
-
-            if (string.IsNullOrEmpty(mtxtSearch.Text.Trim()))
-            {
-                e.Cancel = true;
-                //errorProvider1.SetError(mtxtSearch, "This field is required!");
-            }
-            else
-            {
-                //e.Cancel = false;
-                //errorProvider1.SetError(mtxtSearch, null);
-            }
-        }
 
         private void DataBackEvent(object sender, int PersonID)
         {
             // Handle the data received
-
             cbFilterBy.SelectedIndex = 1;
             mtxtSearch.Text = PersonID.ToString();
             ctrlPersonCard1.LoadPersonInfo(PersonID);
@@ -162,10 +155,10 @@ namespace DVLD.People.Controls
             frm1.ShowDialog();
         }
 
-        public void FilterFocus()
-        {
-            mtxtSearch.Focus();
-        }
+        //public void FilterFocus()
+        //{
+        //    mtxtSearch.Focus();
+        //}
 
         private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
         {

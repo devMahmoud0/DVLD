@@ -36,8 +36,7 @@ namespace DVLD
 
             Application.Run(new frmMain());
 
-
-
+            //Application.Run(new frmTest());
         }
     }
 }

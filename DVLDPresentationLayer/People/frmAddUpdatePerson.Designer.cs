@@ -589,7 +589,7 @@
             // 
             // pbPersonPicture
             // 
-            this.pbPersonPicture.Image = global::DVLD.Properties.Resources.testPerson1;
+            this.pbPersonPicture.Image = global::DVLD.Properties.Resources.DefaultPicture;
             this.pbPersonPicture.Location = new System.Drawing.Point(864, 192);
             this.pbPersonPicture.Name = "pbPersonPicture";
             this.pbPersonPicture.Size = new System.Drawing.Size(208, 208);
@@ -606,7 +606,7 @@
             this.btnSave.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnSave.Depth = 0;
             this.btnSave.HighEmphasis = true;
-            this.btnSave.Icon = global::DVLD.Properties.Resources.disk;
+            this.btnSave.Icon = global::DVLD.Properties.Resources.save;
             this.btnSave.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
             this.btnSave.Location = new System.Drawing.Point(624, 424);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);

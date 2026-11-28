@@ -30,7 +30,6 @@
         {
             this.thunderGroupBox1 = new ReaLTaiizor.Controls.ThunderGroupBox();
             this.llblEditPersonInfo = new ReaLTaiizor.Controls.DungeonLinkLabel();
-            this.pbPersonPicture = new System.Windows.Forms.PictureBox();
             this.lblCountry = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblPersonID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbPersonPicture = new System.Windows.Forms.PictureBox();
             this.thunderGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonPicture)).BeginInit();
             this.SuspendLayout();
@@ -104,16 +104,6 @@
             this.llblEditPersonInfo.Text = "Edit Person Info";
             this.llblEditPersonInfo.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
             this.llblEditPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblEditPersonInfo_LinkClicked);
-            // 
-            // pbPersonPicture
-            // 
-            this.pbPersonPicture.BackColor = System.Drawing.Color.White;
-            this.pbPersonPicture.Location = new System.Drawing.Point(656, 64);
-            this.pbPersonPicture.Name = "pbPersonPicture";
-            this.pbPersonPicture.Size = new System.Drawing.Size(176, 176);
-            this.pbPersonPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPersonPicture.TabIndex = 19;
-            this.pbPersonPicture.TabStop = false;
             // 
             // lblCountry
             // 
@@ -330,6 +320,18 @@
             this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Person ID:";
+            // 
+            // pbPersonPicture
+            // 
+            this.pbPersonPicture.BackColor = System.Drawing.Color.White;
+            this.pbPersonPicture.ErrorImage = global::DVLD.Properties.Resources.DefaultPicture;
+            this.pbPersonPicture.InitialImage = global::DVLD.Properties.Resources.DefaultPicture;
+            this.pbPersonPicture.Location = new System.Drawing.Point(656, 64);
+            this.pbPersonPicture.Name = "pbPersonPicture";
+            this.pbPersonPicture.Size = new System.Drawing.Size(176, 176);
+            this.pbPersonPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPersonPicture.TabIndex = 19;
+            this.pbPersonPicture.TabStop = false;
             // 
             // ctrlPersonCard
             // 

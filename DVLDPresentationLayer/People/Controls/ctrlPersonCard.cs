@@ -58,11 +58,11 @@ namespace DVLD.Controls
 
         public void LoadPersonInfo(string NationalNo)
         {
-            _Person = clsPerson.Find(PersonID);
+            _Person = clsPerson.Find(NationalNo);
             if (_Person == null)
             {
                 ResetPersonInfo();
-                MaterialMessageBox.Show($"No Person with PersonID = {PersonID.ToString()}", "Error",
+                MaterialMessageBox.Show($"No Person with National No. = {NationalNo}", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
                         UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
                 return;
@@ -83,7 +83,7 @@ namespace DVLD.Controls
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1,
                         UseRichTextBox: false, buttonsPosition: MaterialFlexibleForm.ButtonsPosition.Center);
             else
-                pbPersonPicture.Image = Resources.testPerson1;
+                pbPersonPicture.Image = Resources.DefaultPicture;
         }
 
         private void _FillPersonInfo()
@@ -114,7 +114,7 @@ namespace DVLD.Controls
             lblDateOfBirth.Text = "N/A";
             lblCountry.Text = "N/A";
             lblAddress.Text = "N/A";
-            pbPersonPicture.Image = Resources.testPerson1;
+            pbPersonPicture.Image = Resources.DefaultPicture;
         }
 
         private void llblEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
